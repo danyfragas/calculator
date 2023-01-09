@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0; /*distância*/
+
+}
+
+a{
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.logo{
+    font-size: 0px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: sans-serif;
+    background: rgba(0, 0, 0, 0.9);;
+    height: 8vh;
+}
+
+main {
+    background: url("bk.jpg") no-repeat center center;
+    background-size: cover;
+    height: 92vh;
+
+}
+
+main {
+    background-size: cover;
+    height: 92vh;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.calculator {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.botao{
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 1px;
+    background-color: rgb(31, 31, 31);
+    border: none;
+    color: #F0FFF0;
+}
+
+.botao:hover{
+    background-color: #302e2e;
+}
+
+.laranja{
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 1px;
+    background-color: rgb(210, 103, 15);
+    border: none;
+    color: #F0FFF0;
+}
+
+.laranja:hover{
+    background-color: rgb(207, 143, 90);
+}
+
+.cinza{
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 1px;
+    background-color: rgb(71, 70, 70);
+    border: none;
+    color: #F0FFF0;
+}
+
+.cinza:hover{
+    background-color: rgb(96, 96, 96);
+}
+
+
+
+#resultado{ /*chamando o id*/
+    background-color:rgb(31, 31, 31);
+    width: 200px;
+    height: 65px;
+    margin: 4.5px;
+    font-size: 60px;
+    color: #F0FFF0;
+    text-align: right;
+    padding: 5px;
+}
+  
