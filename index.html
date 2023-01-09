@@ -23,49 +23,74 @@
 <!--CALCULADORA-->
     
     <div class="calculator">
-            <p id="resultado">0</p>
+            <p id="resultado"></p>
             <table>
                 <tr> <!-- 1º linha -->
-                    <td><button class="cinza">C</button></td>
-                    <td><button class="cinza"><</button></td>
-                    <td><button class="cinza">/</button></td>
-                    <td><button class="laranja">*</button></td>
+                    <td><button class="cinza" onclick="clean()">C</button></td>
+                    <td><button class="cinza" onclick="back()"><</button></td>
+                    <td><button class="cinza" onclick="insert('/')">/</button></td>
+                    <td><button class="laranja" onclick="insert('*')">X</button></td>
                 </tr>
 
                 <tr> <!-- 2º linha-->
-                    <td><button class="botao">7</button></td>
-                    <td><button class="botao">8</button></td>
-                    <td><button class="botao">9</button></td>
-                    <td><button class="laranja">-</button></td>
+                    <td><button class="botao" onclick="insert('7')">7</button></td>
+                    <td><button class="botao" onclick="insert('8')">8</button></td>
+                    <td><button class="botao" onclick="insert('9')">9</button></td>
+                    <td><button class="laranja" onclick="insert('-')">-</button></td>
                 </tr>
 
                 <tr> <!-- 3º linha-->
-                    <td><button class="botao">4</button></td>
-                    <td><button class="botao">5</button></td>
-                    <td><button class="botao">6</button></td>
-                    <td><button class="laranja">+</button></td>
+                    <td><button class="botao" onclick="insert('4')">4</button></td>
+                    <td><button class="botao" onclick="insert('5')">5</button></td>
+                    <td><button class="botao" onclick="insert('6')">6</button></td>
+                    <td><button class="laranja" onclick="insert('+')">+</button></td>
                 </tr>
 
                 <tr> <!-- 4º linha-->
-                    <td><button class="botao">1</button></td>
-                    <td><button class="botao">2</button></td>
-                    <td><button class="botao">3</button></td>
-                    <td rowspan="2"><button class="laranja" style="height: 106px;">=</button></td>
+                    <td><button class="botao" onclick="insert('1')">1</button></td>
+                    <td><button class="botao" onclick="insert('2')">2</button></td>
+                    <td><button class="botao" onclick="insert('3')">3</button></td>
+                    <td rowspan="2"><button class="laranja" style="height: 106px;" onclick="calcular()">=</button></td>
                 </tr>
 
                 <tr> <!-- 5º linha-->
-                    <td colspan="2"><button class="botao" style="width: 106px;">0</button></td>
-                    <td><button class="botao">.</button></td>
+                    <td colspan="2"><button class="botao" style="width: 106px;" onclick="insert('0')">0</button></td>
+                    <td><button class="botao" onclick="insert('.')">.</button></td>
                 </tr>
             </table>
 
 
     </div>
        
+    <script>
+/*inserção de números na calc.*/
+        function insert(num){
+            var numero = document.getElementById('resultado').innerHTML;
+            document.getElementById('resultado').innerHTML = numero + num;
+        }
+/*função de limpeza dos números na calc.*/
+        function clean(){
+            document.getElementById('resultado').innerHTML = "";
+        }
+/*limpar os números de 1 em 1*/
+        function back(){
+            var resultado = document.getElementById('resultado').innerHTML;
+            document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1);
+        }
+/*resultado da operação*/
+        function calcular(){
+            var resultado = document.getElementById('resultado').innerHTML;
+            if(resultado){ /*condicional*/
+                document.getElementById('resultado').innerHTML = eval(resultado);
+            }
+            else{
+                document.getElementById('resultado').innerHTML = "Error";
+            }
+        }
+    </script>
+
     </header>
     <main></main>
-
-    
 
 </body> 
 </html>
